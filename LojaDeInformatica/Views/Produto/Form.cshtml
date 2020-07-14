@@ -1,0 +1,120 @@
+﻿@model LojaDeInformatica.Models.ProdutoViewModel
+
+@{
+    /*ViewData["Title"] = "Form";*/
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/form.css" />
+</environment>
+
+<!--<h2>Form</h2>-->
+
+<h2>Cadastro de Produtos</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form action="Salvar" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="Operacao" value="@ViewBag.Operacao" />
+            <label for="Id" class="control-label">Codigo do Produto</label>
+            @if (ViewBag.Operacao == "I")
+            {
+                <input type="number" Name="Id" value="@Model.Id" class="form-control" />
+            }
+            else
+            {
+                <input type="number" Name="Id" value="@Model.Id" class="form-control disabled" readonly />
+            }
+            <span asp-validation-for="Id" class="text-danger"></span>
+            <br />
+
+            <label for="Descricao" class="control-label">Descrição</label>
+            <input type="text" name="Descricao" value="@Model.Descricao" class="form-control"
+                   required placeholder="Digite a descrição do produto..." />
+            <span asp-validation-for="Descricao" class="text-danger"></span>
+            <br />
+
+            <label for="Id_Categoria" class="control-label">Categoria</label>
+            <select asp-for="Id_Categoria" asp-items="ViewBag.Categoria" class="form-control"></select>
+            <span asp-validation-for="Id_Categoria" class="text-danger"></span>
+            <br />
+
+            <!--placeholder="Digite o preço..."-->
+            <label asp-for="Preco" class="control-label">Preço</label>
+            <input asp-for="Preco" inputmode="numeric" class="form-control" />
+            <span asp-validation-for="Preco" class="text-danger"></span>
+            <br />
+
+            <label for="Id_Marca" class="control-label">Marcas</label>
+            <select asp-for="Id_Marca" asp-items="ViewBag.Marca" class="form-control"></select>
+            <span asp-validation-for="Id_Marca" class="text-danger"></span>
+            <br />
+
+            <label for="Qtd_Estoque" class="control-label">Quantidade em Estoque</label>
+            <input type="number" name="Qtd_Estoque" value="@Model.Qtd_Estoque" class="form-control"
+                   required placeholder="Digite quantidade de estoque" />
+            <span asp-validation-for="Qtd_Estoque" class="text-danger"></span>
+            <br />
+
+
+
+            <input type="file" name="Imagem" id="Imagem" onchange="exibirImagem()" class="btn btn-secondary" />
+            <img id="imgPreview" src="data:image/jpeg;base64,@Model.ImagemEmBase64"
+                 class="img-responsive" width="120" />
+            <span asp-validation-for="Imagem" class="text-danger"></span>
+
+            <div class="form-group">
+                <input type="submit" value="Salvar Produto" class="btn btn-success" />
+            </div>
+            <br />
+            <span class="text-danger">@ViewBag.Erro</span>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar a Home</a>
+</div>
+<script>
+    function exibirImagem() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("Imagem").files[0]);
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("imgPreview").src = oFREvent.target.result;
+        }
+    }
+</script>
+
+<!--
+
+    <label for="Qtd_Reservado" class="control-label">Quantidade Reservada</label>
+            <input type="number" name="Qtd_Reservado" value="Model.Qtd_Reservado"
+                   class="form-control disabled" readonly />
+            <span asp-validation-for="Qtd_Reservado" class="text-danger"></span>
+            <br />
+
+
+
+<div class="row">
+                <div class="form-group col-md-6">
+                    <label for="Endereco" class="control-label">Endereço</label>
+                    <input type="text" name="rua" value="Model.Endereco" id="endereco"
+                           class="form-control" style="width:300px"
+                           required placeholder="Digite seu endereço..." />
+                </div>
+                <div class="form-group col-md-3" style="margin-left:20px">
+                    <label for="Endereco" class="control-label">Numero</label>
+                    <input type="number" name="numero" value="Model.Endereco" id="numero"
+                           class="form-control" style="width:80px" required placeholder="Digite numero da residencia..." />
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="Endereco" class="control-label">Bairro</label>
+                    <input type="text" name="bairro" value="Model.Endereco" id="bairro"
+                           class="form-control" style="width:250px"
+                           required placeholder="Digite o bairro..." />
+                </div>
+
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+-->

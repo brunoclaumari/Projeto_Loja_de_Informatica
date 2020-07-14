@@ -1,0 +1,47 @@
+﻿@model List<ClienteViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/form.css" />
+</environment>
+
+<h2>Lista de Clientes</h2>
+<a class="btn btn-default" href="/cliente/create">Novo Cliente</a>
+<br />
+
+<table class="table table-responsive">
+    <tr>
+        <th>Ações</th>
+        <th>Codigo do Cliente</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>CPF</th>
+        <th></th>
+    </tr>
+    @foreach (var cliente in Model)
+    {
+        <tr>
+            <td>
+                <a class="btn btn-warning" href="/cliente/Edit?id=@cliente.Id">Editar</a>
+                <a class="btn btn-danger" href="javascript:apagarCliente(@cliente.Id)">Apagar</a>
+            </td>
+            <td>@cliente.Id</td>
+            <td>@cliente.Nome</td>
+            <td>@cliente.Email</td>
+            <td>@cliente.Cpf</td>
+        </tr>
+    }
+
+
+</table>
+<script>
+    function apagarCliente(id)
+    {
+        if (confirm('Tem certeza que deseja excluir esse cliente?'))
+            location.href = '/cliente/Delete?id=' + id;
+    }
+</script>
+

@@ -1,0 +1,54 @@
+﻿@model LojaDeInformatica.Models.MarcaViewModel
+
+@{
+    /*ViewData["Title"] = "Form";*/
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <a href="~/DAO/RegiaoDAO.cs">~/DAO/RegiaoDAO.cs</a>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/form.css" />
+</environment>
+
+<!--<h2>Form</h2>-->
+
+<h2>Cadastro de Marcas</h2>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form action="Salvar" method="post">
+            <!--<div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+            <input type="hidden" name="Operacao" value="@ViewBag.Operacao" />
+            <label for="Id" class="control-label">Codigo da Marca</label>
+            <input type="number" Name="Id" value="@Model.Id" class="form-control disabled" readonly />
+            @*@if (ViewBag.Operacao == "I")
+        {
+            <input type="number" Name="Id" value="@Model.Id" class="form-control disabled" />
+        }
+        else
+        {
+            <input type="number" Name="Id" value="@Model.Id" class="form-control disabled" readonly />
+        }*@
+            <span asp-validation-for="Id" class="text-danger"></span>
+            <br />
+
+            <label for="Marca" class="control-label">Nome da Marca</label>
+            <input type="text" name="Marca" value="@Model.Marca" class="form-control"
+                   required placeholder="Digite o nome da marca..." />
+            <span asp-validation-for="Marca" class="text-danger"></span>
+            <br />
+
+            <div class="form-group">
+                <input type="submit" value="Salvar Marca" class="btn btn-success" />
+            </div>
+            <br />
+            <span class="text-danger">@ViewBag.Erro</span>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar a Home</a>
+</div>
+
+

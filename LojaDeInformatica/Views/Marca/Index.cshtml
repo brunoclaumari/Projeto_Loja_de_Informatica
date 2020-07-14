@@ -1,0 +1,42 @@
+﻿@model List<MarcaViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/form.css" />
+</environment>
+
+<h2>Lista de Marcas</h2>
+<a class="btn btn-default" href="/marca/create">Adicionar nova Marca</a>
+<br />
+
+<table class="table table-responsive">
+    <tr>
+        <th>Ações</th>
+        <th>Codigo da Marca</th>
+        <th>Nome da Marca</th>        
+        <th></th>
+    </tr>
+    @foreach (var marca in Model)
+    {
+        <tr>
+            <td>
+                <a class="btn btn-warning" href="/marca/Edit?id=@marca.Id">Editar</a>
+                <a class="btn btn-danger" href="javascript:apagarMarca(@marca.Id)">Apagar</a>
+            </td>
+            <td>@marca.Id</td>
+            <td>@marca.Marca</td>
+
+        </tr>
+    }
+</table>
+<script>
+    function apagarMarca(id)
+    {
+        if (confirm('Tem certeza que deseja excluir essa marca?'))
+            location.href = '/marca/Delete?id=' + id;
+    }
+</script>
+

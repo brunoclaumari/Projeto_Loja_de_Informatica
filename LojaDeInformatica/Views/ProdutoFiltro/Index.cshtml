@@ -1,0 +1,105 @@
+﻿@model IEnumerable<LojaDeInformatica.Models.ProdutoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*<a asp-action="Create">Create New</a>*@
+</p>
+
+<table class="table">
+
+    <thead>
+        <a class="btn btn-warning" href="/produto/FiltroProduto?id_categoria,id_marca, preco=">Filtrar</a>
+        <tr>
+            <th>
+                <label for="Id_Categoria" class="control-label">Categeorias</label>
+                <select asp-items="ViewBag.Categoria" class="form-control"></select>
+            </th>
+            <th>
+                <label for="Id_Marca" class="control-label">Marcas</label>
+                <select asp-items="ViewBag.Marca" class="form-control"></select>
+            </th>
+        </tr>
+
+    </thead>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemEmByte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagemEmBase64)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc_Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc_Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qtd_Estoque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagemEmByte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImagemEmBase64)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc_Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc_Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qtd_Estoque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

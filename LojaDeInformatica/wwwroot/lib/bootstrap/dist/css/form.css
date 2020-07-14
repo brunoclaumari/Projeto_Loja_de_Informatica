@@ -1,0 +1,23 @@
+h2 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    /*font-weight: bold;*/
+    border-bottom: 2px solid #333333;
+}
+
+.painel {
+    /*margin: 10px 0px; */
+    margin-left:auto;
+    margin-right:auto;
+    padding: 10px; /*padding: 10px;*/
+    width: 350px; /*width: 445px;*/
+    border-radius: 20px;
+    float: inherit;
+    color:white;
+    text-align:center;
+}
+
+.login {
+    background-color: #333333; /*#dcdcf5*/
+}
+
+

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/form.css" />
+</environment>
+
+
+
+<section class="painel login">
+    @*<div class="row">*@
+
+    @*<div class="col-lg-3">*@
+
+    <h2>Login</h2>
+    <form action="/login/Fazerlogin" method="post">
+        <br />
+        <label for="usuario" class="control-label">Usuário</label>
+        <input type="text" name="usuario" class="form-control"
+               required placeholder='Digite seu e-mail de usuario...' />
+        <br />
+
+        <label for="senha" class="control-label">Senha</label>
+        <input type="password" name="senha" class="form-control"
+               required placeholder='Digite sua senha de 6 a 8 digitos...' />
+
+        <br />
+        <input type="submit" value="Logar!" class="btn-info" />
+        <br />
+        <br />
+        <label for="novo_usuario" class="control-label">Novo Usuário?</label>
+        <a class="btn btn-info" href="/cliente/create">Clique Aqui</a>
+        @*<input type="submit" value="Clique aqui" class="btn-info" />*@
+        <br />
+
+        
+
+        <span class="text-danger">@ViewBag.Erro</span>
+    </form>
+
+    @*</div>*@
+
+
+  
+</section>
+
+

@@ -1,0 +1,57 @@
+﻿@model List<ProdutoViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/form.css" />
+</environment>
+
+<h2>Lista de Produtos</h2>
+<a href="/produto/create" class="btn btn-default">Novo Produto </a>
+<br />
+
+<table class="table table-responsive">
+    <tr>
+        <th>Ações</th>
+        <th>Codigo do Produto</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Preço</th>
+        <th>Marca</th>
+        <th>Quant. Estoque</th>
+        <th>Imagem</th>
+    </tr>
+    @foreach (var produto in Model)
+    {
+        <tr>
+            <td>
+                <a class="btn btn-warning" href="/produto/Edit?id=@produto.Id">Editar</a>
+                <a class="btn btn-danger" href="javascript:apagarProduto(@produto.Id)">Apagar</a>
+            </td>
+
+            <td>@produto.Id</td>
+            <td>@produto.Descricao</td>
+            <td>@produto.Desc_Categoria</td>
+            <td>@produto.Preco</td>
+            <td>@produto.Desc_Marca</td>
+            <td>@produto.Qtd_Estoque</td>
+
+            <td>
+                <img id="imgPreview" src="data:image/jpeg;base64, @produto.ImagemEmBase64"
+                     class="img-responsive" width="120">
+            </td>
+        </tr>
+    }
+
+    <span class="text-danger">@ViewBag.Erro</span>
+</table>
+<script>
+    function apagarProduto(id) {
+        if (confirm('Tem certeza que deseja excluir esse produto?'))
+            location.href = '/produto/Delete?id=' + id;
+    }
+
+</script>
+

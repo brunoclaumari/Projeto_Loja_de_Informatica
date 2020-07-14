@@ -1,0 +1,30 @@
+h2 {
+	margin-top: 30px;
+	position: center;
+	text-align: center;
+	font-family: Arial;
+	font-weight: bold;
+	border-bottom: 2px solid #333333;
+}
+
+p {
+	padding: 0 45px;
+	text-indent: 15px;
+}
+
+#nome {
+    text-align:center;
+}
+
+h4 {
+    text-align: center;
+    font-family: Arial;
+    position: center;
+}
+
+.integrantes {
+    text-align: center;
+    font-family: Arial;
+    position: center;
+}
+

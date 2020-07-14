@@ -1,0 +1,45 @@
+﻿@model List<ProdutoViewModel>
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<environment include="Development">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/style.css" />
+</environment>
+
+
+<br />
+<br />
+ 
+	<section class="carrinho comprar">
+		<h2>Lista de Produtos</h2>
+		
+		<ul class="ul-vitrine">
+			@foreach (var produto in Model)
+			{
+				<li class="li-vitrine">				
+					<a href="/Carrinho/Detalhes/?idProduto=@produto.Id">
+						<figure>
+							<img class="tamanho" src="data:image/jpeg;base64,@produto.ImagemEmBase64">
+							<figcaption>
+								@produto.Descricao por R$ @produto.Preco<br>
+							</figcaption>
+						</figure>
+					</a>					
+				</li>
+				}
+			</ul>
+        <span class="text-danger">@ViewBag.Erro</span>
+	</section>
+
+
+
+@section Styles {
+	<link href="@Url.Content("~/lib/bootstrap/dist/css/style.css")" rel="stylesheet" type="text/css" />
+}
+
+
+
+
+
+
