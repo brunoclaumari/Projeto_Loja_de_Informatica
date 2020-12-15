@@ -112,7 +112,7 @@ create procedure SpInsert_Marca
 GO
 -------------------------------------------/*Procedures Update */-----------------------------------------------------------
 --Procedure para atualizar Cliente
---Procedure para atualizar Categoria(N„o)
+--Procedure para atualizar Categoria(N√£o)
 --Procedure para atualizar Produto
 --Procedure para atualizar Marca
 
@@ -180,7 +180,7 @@ GO
 create procedure spValidaCPF (@CPF as varchar(11) )
 as
 BEGIN
--- declaraÁ„o das vari·veis locais
+-- declara√ß√£o das vari√°veis locais
 	declare @n int
 	declare @soma int
 	declare @multi int
@@ -201,7 +201,7 @@ BEGIN
 		set @multi = @multi -1;
 		set @n = @n + 1
 	end
-	set @soma = @soma % 11 -- % -> mÛdulo
+	set @soma = @soma % 11 -- % -> m√≥dulo
 	if @soma <=1
 		set @digito1 = 0
 	else
@@ -217,7 +217,7 @@ BEGIN
 		set @n = @n + 1
 	end
 	set @soma = (@soma + @digito1 * @multi);
-	set @soma = @soma % 11 -- % -> mÛdulo
+	set @soma = @soma % 11 -- % -> m√≥dulo
 	if @soma <=1
 		set @digito2 = 0
 	else
@@ -238,7 +238,7 @@ END
 GO
 
 -------------------------------------------------------------------------------------
---12-Procedure para ver se CPF j· existe no Banco
+--12-Procedure para ver se CPF j√° existe no Banco
 create procedure spConsultaCpf
 (
 	@cpf varchar(11)
@@ -254,7 +254,7 @@ end
 GO
 
 --------------------------------------------------------------------------------
---13-Consulta para saber se o e-mail existe ou n„o, para n„o repetir
+--13-Consulta para saber se o e-mail existe ou n√£o, para n√£o repetir
 create procedure spConsultaEmail
 (
 @id int,
@@ -280,7 +280,7 @@ end
 GO
 
 ---------------------------------------------------------------
---14-Valida senha ou usu·rio
+--14-Valida senha ou usu√°rio
 create procedure spTesteLogin
 (
 @email2 varchar(max),
@@ -307,7 +307,7 @@ end
 GO
 
 ------------------------------------------------------------------------------------
---15-Procedure para verificar existencia ou n„o da marca
+--15-Procedure para verificar existencia ou n√£o da marca
 create procedure spExisteMarca
 (
 	@id int,
@@ -332,7 +332,7 @@ end
 GO
 
 --------------------------------------------------
---16-Procedure pra n„o deixar repetir imagem do produto
+--16-Procedure pra n√£o deixar repetir imagem do produto
 create procedure spConsultaImagem
 (
 	@operacao varchar(1),
@@ -354,7 +354,7 @@ begin
 end
 GO
 ---------------------------------------------------------
---17-Procedure SimulaAumento de PreÁos -- Usando Cursores
+--17-Procedure SimulaAumento de Pre√ßos -- Usando Cursores
 
 create procedure SP_SimulaAumento
 								(@por decimal(10,2)) as
@@ -384,11 +384,11 @@ create procedure SP_SimulaAumento
 	--abre o cursor
 	open cursor_func
 
-	--leitura do 1∫ registro
+	--leitura do 1¬∫ registro
 	fetch next from cursor_func
 		into @id,@imagem,@descricao,@id_categoria,@preco,@id_marca,@qtd_estoque
 
-	--enquanto a leitura estiver ok, faÁa o loop
+	--enquanto a leitura estiver ok, fa√ßa o loop
 	while(@@FETCH_STATUS = 0) begin
 
 			insert into #Produto(id,imagem,descricao,id_categoria,preco,id_marca,qtd_estoque) 
@@ -401,7 +401,7 @@ create procedure SP_SimulaAumento
 	--fecha o cursor
 	close cursor_func
 
-	--elimina o cursor da memÛria
+	--elimina o cursor da mem√≥ria
 	deallocate cursor_func
 
 	select * from #Produto
@@ -439,7 +439,7 @@ end
 GO
 
 -------------------------------------------------
---20-Procedure para Consultar qual cliente est· logado
+--20-Procedure para Consultar qual cliente est√° logado
 create procedure spConsultaClienteLogado
 (
 @email varchar(max)
@@ -455,10 +455,10 @@ return
 end
 GO
 
-select * from ItensVenda
+--select * from ItensVenda
 --------------------------------------------------------------------
 --21 - Trigger para tirar produto do estoque
-alter trigger trg_insere_ItensVenda
+create trigger trg_insere_ItensVenda
 				on ItensVenda for insert as
 begin 
 	declare @qtEstoque int
@@ -478,11 +478,11 @@ begin
 	--abre o cursor
 	open cursor_func
 
-	--leitura do 1∫ registro
+	--leitura do 1¬∫ registro
 	fetch next from cursor_func
 		into @codigo,@id_venda,@id_produto,@quantidade,@preco
 
-	--enquanto a leitura estiver ok, faÁa o loop
+	--enquanto a leitura estiver ok, fa√ßa o loop
 	while(@@FETCH_STATUS = 0) begin
 				set  @qtEstoque = (select qtd_estoque from Produto where id = @id_produto)
 					if @quantidade > @qtEstoque begin
@@ -502,13 +502,14 @@ begin
 	--fecha o cursor
 	close cursor_func
 
-	--elimina o cursor da memÛria
+	--elimina o cursor da mem√≥ria
 	deallocate cursor_func
 end
+GO
 
 ---------------------------------------------------
 --22 Procedure para Filtro em Produto
-alter procedure sp_FiltroProduto
+create procedure sp_FiltroProduto
 (
 	@idCategoria int,
 	@idMarca int,
@@ -566,7 +567,4 @@ begin
 		end
 	end
 end
-
-
-
-
+GO
