@@ -92,8 +92,8 @@ create procedure SpInsert_Produto
 				 @qtd_estoque int
 				) as
 begin
-	insert into Produto(imagem,descricao,id_categoria,preco,id_marca,qtd_estoque)
-	values (@imagem,@descricao,@id_categoria,@preco,@id_marca,@qtd_estoque)
+	insert into Produto(id,imagem,descricao,id_categoria,preco,id_marca,qtd_estoque)
+	values (@id,@imagem,@descricao,@id_categoria,@preco,@id_marca,@qtd_estoque)
 
 end
 GO

@@ -12537,23 +12537,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bruna\\.nuget\\packages\\": {},
+    "C:\\Users\\082170034\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bruna\\Desktop\\TRABALHO EDUARDO_VIOTTI\\LojaInformatica - Versoes\\LojaDeInformatica_V15\\LojaDeInformatica\\LojaDeInformatica.csproj",
+      "projectUniqueName": "C:\\Users\\082170034\\Desktop\\FAZENDO READ_ME\\Projeto_Loja_de_Informatica\\LojaDeInformatica\\LojaDeInformatica.csproj",
       "projectName": "LojaDeInformatica",
-      "projectPath": "C:\\Users\\bruna\\Desktop\\TRABALHO EDUARDO_VIOTTI\\LojaInformatica - Versoes\\LojaDeInformatica_V15\\LojaDeInformatica\\LojaDeInformatica.csproj",
-      "packagesPath": "C:\\Users\\bruna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruna\\Desktop\\TRABALHO EDUARDO_VIOTTI\\LojaInformatica - Versoes\\LojaDeInformatica_V15\\LojaDeInformatica\\obj\\",
+      "projectPath": "C:\\Users\\082170034\\Desktop\\FAZENDO READ_ME\\Projeto_Loja_de_Informatica\\LojaDeInformatica\\LojaDeInformatica.csproj",
+      "packagesPath": "C:\\Users\\082170034\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\082170034\\Desktop\\FAZENDO READ_ME\\Projeto_Loja_de_Informatica\\LojaDeInformatica\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\bruna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\082170034\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
