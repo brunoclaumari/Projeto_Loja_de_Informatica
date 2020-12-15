@@ -1,11 +1,10 @@
 
-
 use master
 GO
 
 
-drop database LojaInformatica
-GO
+--drop database LojaInformatica
+--GO
 
 create database LojaInformatica
 GO
@@ -22,7 +21,7 @@ CREATE TABLE [dbo].[Categoria]
 	descricao [varchar](50) NULL);
 GO
 
-/*Cria tabela regi„o*/
+/*Cria tabela regi√£o*/
 
 CREATE TABLE [dbo].[Regiao](
 	id [int] NOT NULL primary key,
@@ -96,20 +95,3 @@ CREATE TABLE [dbo].[ItensVenda](
 	FOREIGN KEY ( id_produto ) REFERENCES [Produto] ( Id ) 
 );
 GO
-
-/*
-alter table cliente 
-alter column email varchar(60) not null;
-*/
-
-
-
-
-
-
-
-
-
-
-
-
