@@ -8,14 +8,14 @@ Alipio Danilo, Bruno de Sousa e Paulo de Tarso
 Projeto da disciplina de Linguagem de Programação 1, da Faculdade de Tecnologia Termomecânica que reproduz um sistema de loja de informática onde é possível cadastrar produtos, clientes, e pedidos. Também tem conexão com o banco SQLServer executando as querys que acompanham o programa.
 
 # Layout Web
--Tela Home
-![Web 1](https://drive.google.com/file/d/12UligBArp4_VkkmYuYeZIncbb3w51sBA/view?usp=sharing)
+## Tela Home
+![Web 1](https://github.com/brunoclaumari/Projeto_Loja_de_Informatica/blob/master/assets/home.png)
 
--Login (usar esse usuario para poder entrar)
-![Web 2](https://drive.google.com/file/d/1Oh5XNGTYc1nbT_lkV9L8nUHPtRVR6-1x/view?usp=sharing)
+## Login (usar esse usuario para poder entrar -> SENHA = 123456)
+![Web 2](https://github.com/brunoclaumari/Projeto_Loja_de_Informatica/blob/master/assets/login.png)
 
--Lista de Produtos
-![Web 3](https://drive.google.com/file/d/1-VDbJ2tDEk1o6S8dHJWcauaCZAQDHwCT/view?usp=sharing)
+## Lista de Produtos
+![Web 3](https://github.com/brunoclaumari/Projeto_Loja_de_Informatica/blob/master/assets/lista_produtos.png)
 
 # Diagrama do Banco
 ![Diag 1](https://drive.google.com/file/d/15AMOQdwerpe6ZZdbSCbIjKMfBXpPHBiW/view?usp=sharing)
@@ -43,11 +43,15 @@ Como no momento não está distribuído na rede, esses são os pré-requisitos:
 -Ter o SQL Server Express e SQL management Studio instalado, para poder executar os scripts.
 -Clonar ou baixar este projeto do github. Se for download, fazer a extração.
 
-
 --Usar esses parametros no seu SQL Server como 'localhost'. 
-## É necessário configurar o usuario sa 
+## No SQL management Studio, é necessário configurar o usuario sa 
+![ref 1](https://www.devmedia.com.br/ativar-usuario-sa-sql-server/20794)
+
 user id=sa; 
 password=123456"
+
+## Configurar o localhost
+![ref 2](https://qastack.com.br/programming/12774827/cant-connect-to-localhost-on-sql-server-express-2012-2016)
 
 --Para login -> usuario = santos@dominio.com.br / senha = 123456
 
@@ -56,4 +60,13 @@ Ordem de execução das querys
 1-Cria_Banco_LojaInformatica_N2-V7
 2-Procedures_Banco_LojaInformatica_N2-V9
 3-Provoando o banco_N2-V3
+
+--Depois que todos os procedimentos do banco foram executados: 
+
+### ->Ir na pasta do projeto e clicar 2x no arquivo 'LojaDeInformatica.sln' e aí o Visual Studio vai abrir
+### ->Clicar no botão executar do Visual Studio
+
+
+
+
 
