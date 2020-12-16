@@ -18,7 +18,7 @@ Projeto da disciplina de Linguagem de Programação 1, da Faculdade de Tecnologi
 ![Web 3](https://github.com/brunoclaumari/Projeto_Loja_de_Informatica/blob/master/assets/lista_produtos.png)
 
 # Diagrama do Banco
-![Diag 1](https://drive.google.com/file/d/15AMOQdwerpe6ZZdbSCbIjKMfBXpPHBiW/view?usp=sharing)
+![Diag 1](https://github.com/brunoclaumari/Projeto_Loja_de_Informatica/blob/master/assets/DIAGRAMA%20LOJA%20DE%20INFORM%C3%81TICA.png)
 
 # Tecnologias 
 ## Backend
