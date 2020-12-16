@@ -45,13 +45,13 @@ Como no momento não está distribuído na rede, esses são os pré-requisitos:
 
 --Usar esses parametros no seu SQL Server como 'localhost'. 
 ## No SQL management Studio, é necessário configurar o usuario sa 
-![ref 1](https://www.devmedia.com.br/ativar-usuario-sa-sql-server/20794)
+https://www.devmedia.com.br/ativar-usuario-sa-sql-server/20794
 
 user id=sa; 
 password=123456"
 
 ## Configurar o localhost
-![ref 2](https://qastack.com.br/programming/12774827/cant-connect-to-localhost-on-sql-server-express-2012-2016)
+https://qastack.com.br/programming/12774827/cant-connect-to-localhost-on-sql-server-express-2012-2016
 
 --Para login -> usuario = santos@dominio.com.br / senha = 123456
 
